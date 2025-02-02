@@ -1,18 +1,21 @@
-<div id="<%= dom_id product %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= product.name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= product.description %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= product.price %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Quantity:</strong>
-    <%= product.quantity %>
-  </p>
-</div>
+<tr class="border border-gray-200" id="<%= dom_id product %>">
+  <td class="py-2 px-2"><%= product.name %></td>
+  <td class="py-2 px-2"><%= product.description %></td>
+  <td class="py-2 px-2"><%= product.price %></td>
+  <td class="py-2 px-2"><%= product.quantity %></td>
+  <td class="py-2 px-2 flex items-center">
+    <%= link_to edit_product_path(product), data: { turbo_frame: 'modal' }, class: "p-1 rounded-full bg-gray-100 hover:bg-gray-50 inline-block" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 11l6-6m2 2l-6 6M4 20h4l10-10-4-4L4 16v4z" />
+      </svg>
+    <% end %>
+
+    <div class="ml-2">
+      <%= button_to product, method: :delete, class: "p-1 rounded-full text-white bg-red-600 hover:bg-red-500", data: { turbo_confirm: "Are you sure?" } do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m-7 0a1 1 0 011-1h4a1 1 0 011 1m-7 0h8" />
+        </svg>
+      <% end %>
+    </div>
+  </td>
+</tr>
