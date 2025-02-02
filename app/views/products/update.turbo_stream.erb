@@ -1,0 +1,3 @@
+<%= turbo_stream.replace @product %>
+<%= turbo_stream.update 'notice', partial: 'shared/notice', locals: { message: "Product updated successfully!" } %>
+<%= turbo_stream.update 'modal', '' %>
