@@ -1,5 +1,4 @@
-<tr class="border border-gray-200" id="<%= dom_id product %>">
-  <td class="py-2 px-2"><%= product.name %></td>
+<tr class="<%= ['border border-gray-200', ('bg-red-100' if product.low_stock?)].compact.join(' ') %>" id="<%= dom_id product %>">  <td class="py-2 px-2"><%= product.name %></td>
   <td class="py-2 px-2"><%= product.description %></td>
   <td class="py-2 px-2"><%= product.price %></td>
   <td class="py-2 px-2"><%= product.quantity %></td>
