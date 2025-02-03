@@ -1,0 +1,15 @@
+<nav class="flex justify-center mt-4">
+  <ul class="flex items-center justify-center space-x-1">
+
+    <% paginator.each_page do |page| %>
+      <% if page %>
+        <li>
+          <%= link_to page, url_for(page: page), class: "px-3 py-1 rounded #{page == current_page ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}" %>
+        </li>
+      <% else %>
+        <li class="px-3 py-1 text-gray-500">…</li>
+      <% end %>
+    <% end %>
+
+  </ul>
+</nav>

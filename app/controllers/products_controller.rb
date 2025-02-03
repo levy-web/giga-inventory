@@ -3,7 +3,14 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Product.page(params[:page]).per(10)
+  
+    respond_to do |format|
+      format.html
+      format.turbo_stream do |turbo_stream|
+        turbo_stream.replace "product_list", partial: "products/list", locals: { products: @products }
+      end
+    end
   end
 
   # GET /products/1 or /products/1.json
