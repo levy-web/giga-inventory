@@ -5,6 +5,8 @@ class Product < ApplicationRecord
 
     after_save :check_low_stock
 
+    has_one_attached :picture
+
     # tracks if stock is low
     def low_stock?
         quantity <= 10

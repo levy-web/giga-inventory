@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        @product.picture.attach(params[:picture])
         format.turbo_stream
         format.html { redirect_to products_path, notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
@@ -46,6 +47,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        @product.picture.attach(params[:picture])
         format.turbo_stream
         format.html { redirect_to @product, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
@@ -75,6 +77,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.expect(product: [ :name, :description, :price, :quantity ])
+      params.expect(product: [ :name, :description, :price, :quantity, :picture ])
     end
 end
