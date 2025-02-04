@@ -1,24 +1,83 @@
-# README
+# GIGA INVENTORY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this is a basic API built with rails.
 
-Things you may want to cover:
+The application has been built with the MVC design pattern and REST convections.
 
-* Ruby version
 
-* System dependencies
+## Pre-Requisites
+In order to use this repository you will need the following:
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+- Operating System **(Windows `10+`, Linux `3.8+`, or MacOS X `10.7+`)**
+- RAM >= 4GB
+- Free Space >= 2GB
 
-* How to run the test suite
+## Built With
+This application has been built with the following tools:
 
-* Services (job queues, cache servers, search engines, etc.)
+![ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
 
-* Deployment instructions
 
-* ...
+- **Ruby `v3.2.+`**
+- **"sqlite3",  `>= 2.1`**
+- **Rake ``**
+- **Puma ``**
+- **rerun ``**
+- **Rails ``**
+- **ERB `v4.0`**
+
+## Setup
+You can setup this repository by following this manual
+
+1. Clone the repository and navigate to restaurantApp folder.
+    ```{shell}
+   git clone git@github.com:levy-web/giga-inventory.git
+   ```
+2. Ensure the ruby gems are setup in your machine
+    ```{shell}
+   bundle install
+   ```
+
+
+4. Perform any pending database migrations
+   ```{shell}
+   rake db:migrate
+   ```
+
+6. Run the server
+    ```{shell}
+    rails server or rails s 
+    ```
+
+7. For Email notification to work, setup gmail password
+    ```
+    https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237
+    ```
+    Copy example.env and replace the variables with admin email and app password.
+
+8. Open the application from your browser and migrate to a routes specified below in this document.
+
+    ```
+   http://localhost:3000
+   ```
+   -- You wi be redirected to 
+
+   ```
+   http://localhost:3000/products
+   ```
+   
+## Application
+This application is a simple inventory app:
+
+- view all the products.
+- add product.
+- update a product.
+- Delete a product.
+
+## Author
+This repository is maintained by:
+
+- [levy njiru](https://github.com/levy-web) 
+
