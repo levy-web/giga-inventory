@@ -46,13 +46,18 @@ You can setup this repository by following this manual
    rake db:migrate
    ```
 
+   Run The following for tailwind styling to work efficiently.
+   ```{shell}
+   rails tailwindcss:install
+   ```
+
 6. Run the server
     ```{shell}
     rails server or rails s 
     ```
 
 7. For Email notification to work, setup gmail password
-    ```
+    ```{shell}
     https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237
     ```
     Copy example.env and replace the variables with admin email and app password.
